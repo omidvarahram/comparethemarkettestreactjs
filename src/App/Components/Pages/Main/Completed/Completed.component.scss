@@ -1,0 +1,57 @@
+@import "src/style/variables";
+
+.App-completed {
+  display: flex;
+  padding: 2.5rem 15%;
+  flex-direction: column;
+  box-shadow: 0 0 0.2rem gray;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  &__list {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+
+    &__title {
+      margin-bottom: 1rem;
+      font-weight: bolder;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 5rem;
+      color: $green_primary;
+      border-bottom: 2px solid $green_primary;
+    }
+
+    &__item {
+      display: inline-flex;
+      flex-direction: row;
+      padding: 1rem 0;
+    }
+
+    &__label {
+      font-size: 1.8rem;
+      line-height: 2rem;
+      flex-basis: 35%;
+      font-weight: bold;
+    }
+
+    &__value {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: $black_primary
+    }
+  }
+}
+
+
+@media all and (max-device-width: 500px) {
+  .App-completed {
+    padding: 2rem 1.5rem;
+    &__list {
+      &__label {
+        font-size: 1.6rem;
+        flex-basis: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.App-personal-info {
+  display: flex;
+  flex-direction: column;
+
+  &__buttons {
+    display: inline-flex;
+    justify-content: center;
+  }
+}
