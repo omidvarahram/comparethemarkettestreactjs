@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { CustomerDetailsFormStepsState } from '../../../Core/Store/Reducers';
 import { StoreModel } from '../../../Core/Store/store.model';
 import InteractiveCardComponent from '../../Design-system/Ineractive-Card/Interactive-Card.component';
+import ProgressComponent from '../../Shared/Progress/Progress.component';
+import { CompletedComponent } from './Completed/Completed.component';
+import { AddressComponent } from './Customer-forms/Address/Address.component';
+import { PersonalInformationComponent } from './Customer-forms/Personal-information/Personal-information.component';
 import './Main.component.scss'
 
 interface MainPageProps {
@@ -30,13 +34,23 @@ class MainPage extends React.Component<MainPageProps, any> {
 
   private renderFormProgress(): any {
     return (
-      <div></div>
+      <ProgressComponent
+        steps={this.props.customerDetailsFormStepsState}
+      />
     )
   }
 
   private renderTwoStepForm() {
     return (
       <div className="App-main-page__form">
+        {
+          this.props.customerDetailsFormStepsState.currentStep === steps.personal_info ?
+            <PersonalInformationComponent/>
+            : this.props.customerDetailsFormStepsState.currentStep === steps.address ?
+            <AddressComponent/> : <CompletedComponent
+              customerDetails={this.props.customerDetailsFormStepsState.customerDetails}
+            />
+        }
       </div>
     )
   }
