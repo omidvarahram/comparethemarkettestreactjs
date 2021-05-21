@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.scss';
+import { Provider } from 'react-redux';
+import { Store } from './App/Core/Store/Store';
 
 const envSetup = (): void => {
   // to deactivate console.log() in production
@@ -28,9 +30,11 @@ class App extends React.Component<any, any> {
 
   public render() {
     return (
+      <Provider store={Store}>
       <div>
         App
       </div>
+      </Provider>
     )
   }
 }
