@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.scss';
+import MainPage from './App/Components/Pages/Main/Main.component';
+import { HeaderComponent } from './App/Components/Shared/Header/Header.component';
 import { Provider } from 'react-redux';
 import { Store } from './App/Core/Store/Store';
 
@@ -32,7 +34,8 @@ class App extends React.Component<any, any> {
     return (
       <Provider store={Store}>
       <div>
-        App
+        <HeaderComponent/>
+        <MainPage/>
       </div>
       </Provider>
     )

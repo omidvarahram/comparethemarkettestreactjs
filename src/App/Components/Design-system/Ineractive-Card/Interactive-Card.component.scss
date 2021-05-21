@@ -1,0 +1,22 @@
+@import 'src/style/variables';
+
+.App-Interactive-Card {
+  font-size: 1.6rem;
+  display: inline-flex;
+  flex-direction: column;
+  background: $white_primary;
+  min-width: 35rem;
+  max-width: 72rem;
+  width: 70%;
+  height: auto;
+  padding: 2rem;
+  margin: 0 auto;
+  box-shadow: 0 0 1px $gray_primary;
+  border-radius: 1rem;
+}
+
+@media all and (max-device-width: 500px) {
+  .App-Interactive-Card {
+    font-size: 1.4rem;
+  }
+}

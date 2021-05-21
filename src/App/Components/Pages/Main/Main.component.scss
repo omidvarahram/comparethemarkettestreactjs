@@ -1,0 +1,30 @@
+@import "src/style/variables";
+
+.App-main-page {
+  margin: 8rem 0 0;
+  padding-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+  color: $black_primary;
+
+  h2 {
+    text-align: center;
+    text-shadow: 0 0 0.2rem $gray_primary;
+    margin: 1.5rem auto 3.5rem;
+  }
+}
+
+@media all and (max-device-width: 500px) {
+  .App-main-page {
+    font-size: 1.4rem;
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+}

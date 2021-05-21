@@ -1,0 +1,18 @@
+@import 'src/style/variables';
+
+.App-Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem;
+  padding: 1rem;
+  background: $green_primary;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 5rem;
+  box-shadow: 0 0 0.5rem $gray_primary;
+  color: $white_primary;
+  text-shadow: 1px 1px 1px $black_primary;
+  z-index: 100;
+}
