@@ -1,7 +1,4 @@
-import {
-  CustomerDetailsFormModel,
-  streetType
-} from '../../Models';
+import { CustomerDetailsFormModel } from '../../Models';
 import { CustomerDetailActionsEnum, } from '../Actions';
 import { Action } from '../Actions/model';
 

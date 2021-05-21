@@ -18,9 +18,10 @@ import {
   FormItemComponent,
   ValidationMessageComponent
 } from '../../../../Design-system';
+import { formData } from '../form-data';
 import './Address.component.scss'
 
-const formData: FormDataModel[] = require('../form-data.json')?.address || [];
+const formAddressData: FormDataModel[] = formData.address;
 
 interface AddressComponentProps {
   children?: any
@@ -34,7 +35,6 @@ interface AddressComponentState {
     error: string;
   }[]
 }
-
 
 export class AddressComponent extends AbstractComponent<AddressComponentProps, AddressComponentState> {
   public state: AddressComponentState = AddressComponent.initState();
@@ -55,7 +55,7 @@ export class AddressComponent extends AbstractComponent<AddressComponentProps, A
             this.state, (newState) => {
               this.setState(newState)
             },
-            formData
+            formAddressData
           );
         }
       })
@@ -65,7 +65,7 @@ export class AddressComponent extends AbstractComponent<AddressComponentProps, A
     return (
       <div className='App-address'>
         <FormComponent baseClassname='App-address__form'>
-          {formData.map(item => {
+          {formAddressData.map(item => {
             return (
               <Fragment
                 key={`FormItem___${item.formGroupName}___${item.controlName}`}
@@ -154,7 +154,7 @@ export class AddressComponent extends AbstractComponent<AddressComponentProps, A
 
   private submit(): void {
     const state = this.state.formGroup
-    if(this.getFormValidation()) {
+    if (this.getFormValidation()) {
       Store.dispatch(CustomerDetailActions.AddressFormSubmit({
         streetNumber: state.find(i => i.controlName === 'streetNumber')?.value || '',
         streetName: state.find(i => i.controlName === 'streetName')?.value || '',

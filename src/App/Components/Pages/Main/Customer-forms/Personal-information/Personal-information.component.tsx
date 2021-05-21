@@ -16,8 +16,9 @@ import {
   ValidationMessageComponent
 } from '../../../../Design-system';
 import './Personal-information.component.scss'
+import { formData } from '../form-data';
 
-const formData: FormDataModel[] = require('../form-data.json')?.personal_info || []
+const formPersonalInfoData: FormDataModel[] = formData.personal_info;
 
 interface PersonalInformationComponentProps {
   children?: any
@@ -53,7 +54,7 @@ export class PersonalInformationComponent extends AbstractComponent<PersonalInfo
             this.state, (newState) => {
               this.setState(newState)
             },
-            formData
+            formPersonalInfoData
           );
         }
       })
@@ -63,7 +64,7 @@ export class PersonalInformationComponent extends AbstractComponent<PersonalInfo
     return (
       <div className="App-personal-info">
         <FormComponent baseClassname='App-personal-info__form'>
-          {formData.map(item => {
+          {formPersonalInfoData.map(item => {
             return (
               <>
                 <FormItemComponent

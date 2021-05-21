@@ -1,16 +1,11 @@
 import React from 'react';
-import {
-  CustomerDetailsFormModel,
-  FormDataModel
-} from '../../../../Core/Models';
+import { CustomerDetailsFormModel } from '../../../../Core/Models';
 import './Completed.component.scss'
+import { formData } from '../Customer-forms/form-data';
 
 interface CompletedComponentProps {
   customerDetails: CustomerDetailsFormModel
 }
-
-const formData: { [key in "personal_info" | "address"]: FormDataModel[] }
-  = require('../Customer-forms/form-data.json');
 
 const getPersonalInfoData = (customerDetails: CustomerDetailsFormModel): {value: string; label: string}[] => {
   let data = [];

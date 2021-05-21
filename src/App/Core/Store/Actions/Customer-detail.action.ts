@@ -2,8 +2,6 @@ import {
   CustomerAddress,
   CustomerPersonalInfoModel
 } from '../../Models/';
-import { ActionsModel } from './Action.model';
-import { Action } from './model';
 
 export enum CustomerDetailActionsEnum {
   PERSONAL_INFORMATION_FORM_SUBMIT = '[customer] [personal-information] [submit]',
